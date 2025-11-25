@@ -1,0 +1,50 @@
+{
+    "manifest_version": 3,
+    "name": "Perfect Picture-in-Picture",
+    "version": "1.0.0",
+    "description": "The ultimate Picture-in-Picture tool. Float any video, chat, or element in an always-on-top window.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "documentPictureInPicture"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/perfectpip_icon_16.png",
+            "48": "icons/perfectpip_icon_48.png",
+            "128": "icons/perfectpip_icon_128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "css": [
+                "overlay.css"
+            ],
+            "all_frames": true
+        }
+    ],
+    "commands": {
+        "toggle-pip": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+P",
+                "mac": "Command+Shift+P"
+            },
+            "description": "Toggle Picture-in-Picture for the active element"
+        }
+    },
+    "icons": {
+        "16": "icons/perfectpip_icon_16.png",
+        "48": "icons/perfectpip_icon_48.png",
+        "128": "icons/perfectpip_icon_128.png"
+    }
+}
