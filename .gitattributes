@@ -1,2 +1,2 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Exclude the blueprint from language stats
+The\ Architectural\ Blueprint\ for\ the\ Ulti.sty linguist-vendored
